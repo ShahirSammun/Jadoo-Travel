@@ -11,9 +11,9 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
 
 <!-- Navbar -->
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Jadoo</a>
+    <a class="navbar-brand fw-bold fs-3" href="#">Jadoo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,112 +24,157 @@
         <li class="nav-item"><a class="nav-link" href="#steps">Booking</a></li>
         <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
         <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
-        <li class="nav-item"><button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
-        <li class="nav-item"><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button></li>
+        <li class="nav-item"><button class="btn btn-outline-warning btn-sm me-2 nav-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
+        <li class="nav-item"><button class="btn btn-warning btn-sm nav-signup" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-section" id="home">
+<section class="hero-section py-5" id="home">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <p class="subtitle">Best Destinations Around The World</p>
-        <h1 class="hero-title">
+    <div class="row align-items-center pt-5">
+      <div class="col-md-6">
+        <p class="text-uppercase text-warning small">Best Destinations Around The World</p>
+        <h1 class="display-4 fw-bold">
           Travel, enjoy<br>
           and live a new<br>
-          <span class="highlight">and full life</span>
+          <span class="text-warning">and full life</span>
         </h1>
-        <p class="hero-desc">Find your next adventure with Jadoo.</p>
-        <a href="#services" class="btn btn-warning btn-lg px-4 py-2 mt-3 shadow">Get Started</a>
+        <p class="lead">Find your next adventure with Jadoo.</p>
+        <a href="#services" class="btn btn-warning px-4 py-2 mt-3 rounded-pill">Get Started</a>
       </div>
-      <div class="col-lg-6 text-center">
-        <img src="images/top.jpg" alt="Traveler" class="img-fluid hero-img" />
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Services -->
-<section id="services" class="py-5">
-  <div class="container text-center">
-    <p class="section-subtitle">CATEGORY</p>
-    <h2 class="section-title">We Offer Best Services</h2>
-    <div class="row g-4 mt-4">
-      <div class="col-md-3">
-        <div class="service-card shadow-sm">
-          <i class="bi bi-map service-icon"></i>
-          <h5>Guided Tours</h5>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="service-card shadow-sm">
-          <i class="bi bi-airplane service-icon"></i>
-          <h5>Flight Booking</h5>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="service-card shadow-sm">
-          <i class="bi bi-building service-icon"></i>
-          <h5>Hotel Deals</h5>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="service-card shadow-sm">
-          <i class="bi bi-headset service-icon"></i>
-          <h5>24/7 Support</h5>
-        </div>
+      <div class="col-md-6 text-center">
+        <img src="images/top.jpg" alt="Traveler" class="img-fluid rounded hero-img">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Destinations -->
+<!-- Services Section -->
+<section id="services" class="py-5 text-center">
+  <div class="container">
+    <p class="text-uppercase text-warning fw-semibold small mb-1">Category</p>
+    <h2 class="mb-5 fw-bold display-6">We Offer Best Services</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-3">
+        <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
+          <div class="icon-circle mx-auto mb-3">
+            <i class="bi bi-map fs-3 text-warning"></i>
+          </div>
+          <h5 class="fw-semibold">Guided Tours</h5>
+          <p class="small text-muted">Explore with our expert guides.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
+          <div class="icon-circle mx-auto mb-3">
+            <i class="bi bi-airplane fs-3 text-warning"></i>
+          </div>
+          <h5 class="fw-semibold">Flight Booking</h5>
+          <p class="small text-muted">Best deals on all major airlines.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
+          <div class="icon-circle mx-auto mb-3">
+            <i class="bi bi-building fs-3 text-warning"></i>
+          </div>
+          <h5 class="fw-semibold">Hotel Deals</h5>
+          <p class="small text-muted">Affordable stays at prime locations.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
+          <div class="icon-circle mx-auto mb-3">
+            <i class="bi bi-headset fs-3 text-warning"></i>
+          </div>
+          <h5 class="fw-semibold">24/7 Support</h5>
+          <p class="small text-muted">We're here whenever you need us.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Top Destinations -->
 <section id="destinations" class="py-5 bg-light">
   <div class="container text-center">
-    <p class="section-subtitle">Top Selling</p>
-    <h2 class="section-title">Top Destinations</h2>
-    <div class="row g-4 mt-4">
+    <p class="text-uppercase text-warning fw-semibold small mb-1">Top Selling</p>
+    <h2 class="mb-5 fw-bold display-6">Top Destinations</h2>
+    <div class="row g-4">
       <div class="col-md-4">
-        <img src="images/rome.jpg" class="img-fluid rounded" alt="Rome">
-        <h5 class="mt-2">Rome</h5>
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+          <img src="images/rome.jpg" class="card-img-top" alt="Rome">
+          <div class="card-body text-start">
+            <div class="d-flex justify-content-between">
+              <h5 class="fw-semibold mb-1">Rome, Italy</h5>
+              <span class="text-warning fw-bold">$420.80</span>
+            </div>
+            <p class="text-muted small mb-0">10 Days Trip</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-4">
-        <img src="images/london.jpg" class="img-fluid rounded" alt="London">
-        <h5 class="mt-2">London</h5>
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+          <img src="images/london.jpg" class="card-img-top" alt="London">
+          <div class="card-body text-start">
+            <div class="d-flex justify-content-between">
+              <h5 class="fw-semibold mb-1">London, UK</h5>
+              <span class="text-warning fw-bold">$350.60</span>
+            </div>
+            <p class="text-muted small mb-0">12 Days Trip</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-4">
-        <img src="images/istanbul.jpg" class="img-fluid rounded" alt="Istanbul">
-        <h5 class="mt-2">Istanbul</h5>
+        <div class="card border-0 shadow-sm rounded-4 h-100">
+          <img src="images/istanbul.jpg" class="card-img-top" alt="Istanbul">
+          <div class="card-body text-start">
+            <div class="d-flex justify-content-between">
+              <h5 class="fw-semibold mb-1">Istanbul, Turkey</h5>
+              <span class="text-warning fw-bold">$275.20</span>
+            </div>
+            <p class="text-muted small mb-0">7 Days Trip</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Booking Steps -->
-<section id="steps" class="py-5">
-  <div class="container text-center">
-    <p class="section-subtitle">Easy and Fast</p>
-    <h2 class="section-title">Book Your Next Trip in 3 Easy Steps</h2>
-    <div class="row g-4 justify-content-center mt-4">
+<section id="steps" class="py-5 text-center bg-white">
+  <div class="container">
+    <p class="text-uppercase text-warning fw-semibold small mb-1">Easy and Fast</p>
+    <h2 class="mb-5 fw-bold display-6">Book Your Next Trip in 3 Easy Steps</h2>
+    <div class="row g-4 justify-content-center">
       <div class="col-md-3">
-        <div class="step-box">
-          <div class="step-number">1</div>
-          <p>Choose Destination</p>
+        <div class="step-box p-4 h-100 bg-light rounded-4">
+          <div class="icon-circle mx-auto mb-3 bg-warning-subtle">
+            <i class="bi bi-geo-alt fs-4 text-warning"></i>
+          </div>
+          <h6 class="fw-semibold">Choose Destination</h6>
+          <p class="small text-muted">Pick from hundreds of exciting places.</p>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="step-box">
-          <div class="step-number">2</div>
-          <p>Make Payment</p>
+        <div class="step-box p-4 h-100 bg-light rounded-4">
+          <div class="icon-circle mx-auto mb-3 bg-warning-subtle">
+            <i class="bi bi-credit-card fs-4 text-warning"></i>
+          </div>
+          <h6 class="fw-semibold">Make Payment</h6>
+          <p class="small text-muted">Fast and secure transaction options.</p>
         </div>
       </div>
       <div class="col-md-3">
-        <div class="step-box">
-          <div class="step-number">3</div>
-          <p>Reach Airport</p>
+        <div class="step-box p-4 h-100 bg-light rounded-4">
+          <div class="icon-circle mx-auto mb-3 bg-warning-subtle">
+            <i class="bi bi-airplane-engines fs-4 text-warning"></i>
+          </div>
+          <h6 class="fw-semibold">Reach Airport</h6>
+          <p class="small text-muted">Pack your bags & get ready to fly!</p>
         </div>
       </div>
     </div>
@@ -137,20 +182,20 @@
 </section>
 
 <!-- Testimonials -->
-<section id="testimonials" class="py-5 bg-light">
-  <div class="container text-center">
-    <p class="section-subtitle">Testimonials</p>
-    <h2 class="section-title">What People Say About Us</h2>
-    <blockquote class="blockquote mt-4">
+<section id="testimonials" class="py-5 bg-light text-center">
+  <div class="container">
+    <p class="text-uppercase text-warning fw-semibold small mb-1">Testimonials</p>
+    <h2 class="mb-4 fw-bold">What People Say About Us</h2>
+    <blockquote class="blockquote">
       <p class="mb-0">"Great experience with Jadoo! Made my trip smooth and fun!"</p>
-      <footer class="blockquote-footer">Sarah, USA</footer>
+      <footer class="blockquote-footer mt-2">Sarah, USA</footer>
     </blockquote>
   </div>
 </section>
 
 <!-- Footer -->
-<footer id="footer">
-  <div class="container text-center">
+<footer id="footer" class="bg-white py-5 text-center">
+  <div class="container">
     <p class="mb-1">Subscribe to get updates and offers</p>
     <form class="row justify-content-center g-2 mb-4">
       <div class="col-md-4">
@@ -160,18 +205,17 @@
         <button class="btn btn-warning w-100">Subscribe</button>
       </div>
     </form>
-    <p class="text-muted">&copy; 2025 Jadoo Travel. All rights reserved.</p>
+    <p class="text-muted small">&copy; 2025 Jadoo Travel. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- Modals -->
-<!-- Login -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content p-3">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Login</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <form>
@@ -184,13 +228,13 @@
   </div>
 </div>
 
-<!-- Sign Up -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content p-3">
+    <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Sign Up</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
         <form>
@@ -204,7 +248,7 @@
   </div>
 </div>
 
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
