@@ -24,16 +24,21 @@
         <li class="nav-item"><a class="nav-link" href="#steps">Booking</a></li>
         <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
         <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
-        <li class="nav-item"><button class="btn btn-outline-warning btn-sm me-2 nav-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
-        <li class="nav-item"><button class="btn btn-warning btn-sm nav-signup" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button></li>
+        <li class="nav-item"><button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
+        <li class="nav-item"><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero-section py-5" id="home">
-  <div class="container">
+<section class="hero-section position-relative py-5" id="home">
+  <!-- Decorative Elements -->
+  <div class="decorative-elements">
+    <i class="bi bi-airplane-engines flying-plane"></i>
+  </div>
+
+  <!-- Hero Content Container -->
+  <div class="container position-relative">
     <div class="row align-items-center pt-5">
       <div class="col-md-6">
         <p class="text-uppercase text-warning small">Best Destinations Around The World</p>
@@ -46,13 +51,13 @@
         <a href="#services" class="btn btn-warning px-4 py-2 mt-3 rounded-pill">Get Started</a>
       </div>
       <div class="col-md-6 text-center">
-        <img src="images/top.jpg" alt="Traveler" class="img-fluid rounded hero-img">
+        <img src="images/top1.png" alt="Traveler" class="img-fluid rounded hero-img">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services Section -->
+<!-- Services -->
 <section id="services" class="py-5 text-center">
   <div class="container">
     <p class="text-uppercase text-warning fw-semibold small mb-1">Category</p>
@@ -60,36 +65,28 @@
     <div class="row g-4 justify-content-center">
       <div class="col-md-3">
         <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
-          <div class="icon-circle mx-auto mb-3">
-            <i class="bi bi-map fs-3 text-warning"></i>
-          </div>
+          <div class="icon-circle mx-auto mb-3"><i class="bi bi-map fs-3 text-warning"></i></div>
           <h5 class="fw-semibold">Guided Tours</h5>
           <p class="small text-muted">Explore with our expert guides.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
-          <div class="icon-circle mx-auto mb-3">
-            <i class="bi bi-airplane fs-3 text-warning"></i>
-          </div>
+          <div class="icon-circle mx-auto mb-3"><i class="bi bi-airplane fs-3 text-warning"></i></div>
           <h5 class="fw-semibold">Flight Booking</h5>
           <p class="small text-muted">Best deals on all major airlines.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
-          <div class="icon-circle mx-auto mb-3">
-            <i class="bi bi-building fs-3 text-warning"></i>
-          </div>
+          <div class="icon-circle mx-auto mb-3"><i class="bi bi-building fs-3 text-warning"></i></div>
           <h5 class="fw-semibold">Hotel Deals</h5>
           <p class="small text-muted">Affordable stays at prime locations.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="service-box p-4 bg-white rounded-4 shadow-sm h-100">
-          <div class="icon-circle mx-auto mb-3">
-            <i class="bi bi-headset fs-3 text-warning"></i>
-          </div>
+          <div class="icon-circle mx-auto mb-3"><i class="bi bi-headset fs-3 text-warning"></i></div>
           <h5 class="fw-semibold">24/7 Support</h5>
           <p class="small text-muted">We're here whenever you need us.</p>
         </div>
@@ -144,71 +141,149 @@
   </div>
 </section>
 
-<!-- Booking Steps -->
-<section id="steps" class="py-5 text-center bg-white">
+<!-- Booking Steps with Trip to Greece card -->
+<section id="steps" class="py-5 bg-white">
   <div class="container">
-    <p class="text-uppercase text-warning fw-semibold small mb-1">Easy and Fast</p>
-    <h2 class="mb-5 fw-bold display-6">Book Your Next Trip in 3 Easy Steps</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-3">
-        <div class="step-box p-4 h-100 bg-light rounded-4">
-          <div class="icon-circle mx-auto mb-3 bg-warning-subtle">
-            <i class="bi bi-geo-alt fs-4 text-warning"></i>
+    <div class="row align-items-center g-5">
+      <!-- Booking Steps -->
+      <div class="col-md-6">
+        <p class="text-uppercase text-warning fw-semibold small mb-1">Easy and Fast</p>
+        <h2 class="mb-5 fw-bold display-6">Book Your Next Trip in 3 Easy Steps</h2>
+        <div class="d-flex mb-4">
+          <div class="icon-circle bg-warning-subtle me-3"><i class="bi bi-geo-alt fs-5 text-warning"></i></div>
+          <div>
+            <h6 class="fw-semibold mb-1">Choose Destination</h6>
+            <p class="small text-muted">Pick from hundreds of exciting places.</p>
           </div>
-          <h6 class="fw-semibold">Choose Destination</h6>
-          <p class="small text-muted">Pick from hundreds of exciting places.</p>
+        </div>
+        <div class="d-flex mb-4">
+          <div class="icon-circle bg-warning-subtle me-3"><i class="bi bi-credit-card fs-5 text-warning"></i></div>
+          <div>
+            <h6 class="fw-semibold mb-1">Make Payment</h6>
+            <p class="small text-muted">Fast and secure transaction options.</p>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="icon-circle bg-warning-subtle me-3"><i class="bi bi-airplane-engines fs-5 text-warning"></i></div>
+          <div>
+            <h6 class="fw-semibold mb-1">Reach Airport</h6>
+            <p class="small text-muted">Pack your bags & get ready to fly!</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="step-box p-4 h-100 bg-light rounded-4">
-          <div class="icon-circle mx-auto mb-3 bg-warning-subtle">
-            <i class="bi bi-credit-card fs-4 text-warning"></i>
+
+      <!-- Trip to Greece Card -->
+      <div class="col-md-6">
+        <div class="card border-0 shadow rounded-4 overflow-hidden">
+          <img src="images/greece.jpg" class="card-img-top" alt="Trip to Greece">
+          <div class="card-body">
+            <h5 class="fw-bold">Trip to Greece</h5>
+            <p class="small text-muted mb-2">14-29 June | by Jadoo</p>
+            <div class="d-flex gap-2 mb-2">
+              <i class="bi bi-send text-warning"></i>
+              <i class="bi bi-compass text-warning"></i>
+              <i class="bi bi-map text-warning"></i>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted"><i class="bi bi-building text-warning me-1"></i> 24 people going</span>
+              <i class="bi bi-heart text-danger"></i>
+            </div>
           </div>
-          <h6 class="fw-semibold">Make Payment</h6>
-          <p class="small text-muted">Fast and secure transaction options.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="step-box p-4 h-100 bg-light rounded-4">
-          <div class="icon-circle mx-auto mb-3 bg-warning-subtle">
-            <i class="bi bi-airplane-engines fs-4 text-warning"></i>
-          </div>
-          <h6 class="fw-semibold">Reach Airport</h6>
-          <p class="small text-muted">Pack your bags & get ready to fly!</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Testimonials -->
+<!-- What People Say -->
 <section id="testimonials" class="py-5 bg-light text-center">
   <div class="container">
     <p class="text-uppercase text-warning fw-semibold small mb-1">Testimonials</p>
-    <h2 class="mb-4 fw-bold">What People Say About Us</h2>
-    <blockquote class="blockquote">
-      <p class="mb-0">"Great experience with Jadoo! Made my trip smooth and fun!"</p>
-      <footer class="blockquote-footer mt-2">Sarah, USA</footer>
-    </blockquote>
+    <h2 class="mb-5 fw-bold">What People Say About Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card p-4 border-0 shadow rounded-4">
+          <div class="d-flex align-items-center mb-3">
+            <img src="images/user.jpg" alt="User" class="rounded-circle me-3" width="60" height="60">
+            <div class="text-start">
+              <h6 class="mb-0 fw-bold">Sarah Johnson</h6>
+              <small class="text-muted">USA</small>
+            </div>
+          </div>
+          <p class="text-muted fst-italic">"Jadoo made my first international trip so smooth! Everything was arranged perfectly and support was amazing."</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer id="footer" class="bg-white py-5 text-center">
+<!-- Brand Logos -->
+<section class="py-5 bg-white text-center">
   <div class="container">
-    <p class="mb-1">Subscribe to get updates and offers</p>
-    <form class="row justify-content-center g-2 mb-4">
+    <div class="row justify-content-center align-items-center g-4">
+      <div class="col-4 col-md-2"><img src="images/logo1.png" alt="Brand" class="img-fluid"></div>
+      <div class="col-4 col-md-2"><img src="images/logo2.png" alt="Brand" class="img-fluid"></div>
+      <div class="col-4 col-md-2"><img src="images/logo3.png" alt="Brand" class="img-fluid"></div>
+      <div class="col-4 col-md-2"><img src="images/logo4.png" alt="Brand" class="img-fluid"></div>
+      <div class="col-4 col-md-2"><img src="images/logo5.png" alt="Brand" class="img-fluid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Subscribe Section -->
+<section class="py-5 bg-warning-subtle text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Subscribe to get special deals!</h2>
+    <p class="text-muted mb-4">Stay updated with our latest offers and discounts.</p>
+    <form class="row justify-content-center g-2">
       <div class="col-md-4">
-        <input type="email" class="form-control" placeholder="Enter your email" required />
+        <input type="email" class="form-control rounded-pill" placeholder="Enter your email" required>
       </div>
       <div class="col-md-2">
-        <button class="btn btn-warning w-100">Subscribe</button>
+        <button class="btn btn-warning w-100 rounded-pill">Subscribe</button>
       </div>
     </form>
-    <p class="text-muted small">&copy; 2025 Jadoo Travel. All rights reserved.</p>
+  </div>
+</section>
+
+<!-- Footer Navigation -->
+<footer id="footer" class="bg-dark text-light pt-5">
+  <div class="container">
+    <div class="row text-start">
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold text-white">Jadoo</h5>
+        <p class="small text-muted">Book your trip in minute, get full control for much longer.</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6 class="text-white fw-bold">Company</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-muted small text-decoration-none">About</a></li>
+          <li><a href="#" class="text-muted small text-decoration-none">Careers</a></li>
+          <li><a href="#" class="text-muted small text-decoration-none">Mobile</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6 class="text-white fw-bold">Contact</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-muted small text-decoration-none">Help/FAQ</a></li>
+          <li><a href="#" class="text-muted small text-decoration-none">Press</a></li>
+          <li><a href="#" class="text-muted small text-decoration-none">Affiliates</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h6 class="text-white fw-bold">More</h6>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-muted small text-decoration-none">Airline Fees</a></li>
+          <li><a href="#" class="text-muted small text-decoration-none">Airline</a></li>
+          <li><a href="#" class="text-muted small text-decoration-none">Low Fare Tips</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center pt-3 border-top border-secondary mt-4">
+      <p class="text-muted small mb-0">&copy; 2025 Jadoo. All rights reserved.</p>
+    </div>
   </div>
 </footer>
-
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -227,7 +302,6 @@
     </div>
   </div>
 </div>
-
 <!-- Sign Up Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -248,7 +322,6 @@
   </div>
 </div>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

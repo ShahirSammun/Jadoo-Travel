@@ -1,149 +1,306 @@
-/* General */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
+
+/* Base font & body */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fffdfb;
-  margin: 0;
-  padding: 0;
+  background-color: #fff;
+  color: #333;
 }
 
 /* Navbar */
 .custom-navbar {
-  background-color: transparent;
-  transition: background-color 0.4s ease, box-shadow 0.3s ease;
-  padding: 15px 0;
-}
-.custom-navbar.scrolled {
-  background-color: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-.custom-navbar .nav-link,
-.custom-navbar .navbar-brand {
-  color: #000 !important;
-  font-weight: 500;
-}
-.custom-navbar .nav-link:hover {
-  color: #ff6e40 !important;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Navbar Buttons */
-.nav-login {
-  border-color: #000;
-  color: #000;
+.navbar .nav-link {
+  color: black !important;
   font-weight: 500;
+  margin: 0 10px;
 }
-.nav-login:hover {
-  background-color: #000;
-  color: #fff;
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #f1a501 !important;
 }
+
+.nav-login,
 .nav-signup {
-  background-color: #000;
-  color: #fff;
-  border: none;
   font-weight: 500;
-}
-.nav-signup:hover {
-  background-color: #333;
+  border-radius: 20px;
+  padding: 6px 16px;
 }
 
 /* Hero Section */
 .hero-section {
-  padding-top: 130px;
+  position: relative;
+  background-color: #fffdfb;
+  overflow: hidden;
+  padding-top: 100px;
   padding-bottom: 60px;
 }
-.hero-section h1 {
-  font-size: 2.8rem;
-  line-height: 1.3;
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -100px;
+  right: -150px;
+  background: radial-gradient(circle at center, #ffe9d2, #fff6ee);
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 0;
 }
-.hero-section .btn {
-  font-weight: 600;
-  font-size: 16px;
-  border-radius: 30px;
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
 }
+
+.hero-section h1 span {
+  color: #ff6e40;
+}
+
 .hero-img {
-  max-height: 400px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: none;
+  
+}
+
+.hero-img:hover {
+  transform: scale(1.02);
+}
+
+/* Flying Plane Icon */
+.flying-plane {
+  font-size: 2rem;
+  color: #ff6e40;
+  position: absolute;
+  top: 40px;
+  right: 100px;
+  z-index: 2;
+  animation: fly 6s infinite linear;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200px) rotate(20deg);
+    opacity: 0;
+  }
 }
 
 /* Services */
-#services h2 {
-  font-size: 2rem;
-}
 .service-box {
   transition: transform 0.3s ease;
 }
+
 .service-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
+
 .icon-circle {
-  background-color: #fff2e6;
   width: 60px;
   height: 60px;
+  background-color: #fff6f0;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
 }
 
-/* Destinations */
+/* Top Destinations — RESTORED */
 #destinations .card {
   border-radius: 20px;
-  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
 }
+
 #destinations .card:hover {
   transform: translateY(-5px);
 }
-#destinations .card-img-top {
-  height: 250px;
+
+#destinations img {
+  height: 260px;
   object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#destinations .card-body {
+  padding: 20px;
+}
+
+#destinations h5 {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+#destinations span {
+  font-weight: 600;
+  color: #ff6e40;
+}
+
+#destinations p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #777;
 }
 
 /* Booking Steps */
 .step-box {
   transition: transform 0.3s ease;
+  background-color: #fff8ef;
 }
+
 .step-box:hover {
   transform: translateY(-4px);
 }
 
+.step-box .icon-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #fff0e3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Trip to Greece card (used inside steps section) */
+.trip-card {
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.trip-card img {
+  height: 240px;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
 /* Testimonials */
+#testimonials {
+  background-color: #f9f9f9;
+}
+
+#testimonials .testimonial-card {
+  border-radius: 20px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+#testimonials img {
+  object-fit: cover;
+}
+
+#testimonials .rounded-circle {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
 #testimonials blockquote {
   font-size: 1.1rem;
   font-style: italic;
-}
-#testimonials footer {
-  color: #666;
+  margin-bottom: 10px;
 }
 
-/* Footer */
-footer input {
-  border-radius: 30px;
+#testimonials .blockquote-footer {
+  font-weight: 500;
 }
-footer button {
+
+/* Brand Logos */
+.brand-logos {
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+.brand-logos img {
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.brand-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Subscribe Section */
+.subscribe-section {
+  padding: 60px 0;
+  background-color: #fff8ec;
+  text-align: center;
+}
+
+.subscribe-section input.form-control {
+  border-radius: 30px;
+  padding: 10px 20px;
+}
+
+.subscribe-section button {
   border-radius: 30px;
   font-weight: 500;
 }
 
-/* Modals */
-.modal .form-control {
-  margin-bottom: 15px;
-  border-radius: 10px;
-}
-.modal-content {
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+/* Footer */
+footer {
+  font-size: 14px;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-color: #0b1d26;
+  color: white;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-section {
-    text-align: center;
-  }
-  .hero-img {
-    margin-top: 30px;
-  }
+footer h6 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+footer ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer .text-muted {
+  color: #aaa !important;
+}
+
+/* Modal Forms */
+.modal .form-control {
+  margin-bottom: 15px;
 }
