@@ -314,3 +314,27 @@ footer .text-muted {
 .modal .form-control {
   margin-bottom: 15px;
 }
+
+/* ====== Play Demo Button (Hero Section) ====== */
+.play-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #5e6282;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.play-demo-btn .play-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #df6951;
+  color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(223, 105, 81, 0.3);
+}
