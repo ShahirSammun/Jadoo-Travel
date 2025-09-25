@@ -8,7 +8,6 @@ $showForm = false;
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
 
-    // Fetch user with valid token
     $stmt = $conn->prepare("SELECT id, email, token_expiry FROM users WHERE password_reset_token = ?");
     $stmt->bind_param("s", $token);
     $stmt->execute();
@@ -17,7 +16,6 @@ if (isset($_GET['token'])) {
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        // Check token expiry
         if (strtotime($user['token_expiry']) >= time()) {
             $showForm = true;
 
@@ -43,7 +41,7 @@ if (isset($_GET['token'])) {
                 }
             }
         } else {
-            $message = "This reset link has expired. Please request a new one.";
+            $message = "This reset link has expired. Please kindly request a new one.";
         }
     } else {
         $message = "Invalid reset token.";

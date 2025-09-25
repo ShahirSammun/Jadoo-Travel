@@ -21,9 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
         $token = bin2hex(random_bytes(16));
-        $expiry = date("Y-m-d H:i:s", strtotime("+30 minutes")); // token valid 30 min
+        $expiry = date("Y-m-d H:i:s", strtotime("+30 minutes"));
 
-        // Store token and expiry in DB
         $stmt2 = $conn->prepare("UPDATE users SET password_reset_token=?, token_expiry=? WHERE id=?");
         $stmt2->bind_param("ssi", $token, $expiry, $user['id']);
         $stmt2->execute();
@@ -45,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->addAddress($email, $user['name']);
 
             $mail->isHTML(true);
-            $mail->Subject = 'Reset Your Password';
+            $mail->Subject = 'PLease Reset Your Password';
             $mail->Body    = "<p>Hello {$user['name']},</p>
                               <p>Click the link below to reset your password:</p>
                               <a href='$resetLink'>$resetLink</a>
