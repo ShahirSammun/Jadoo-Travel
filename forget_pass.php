@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->addAddress($email, $user['name']);
 
             $mail->isHTML(true);
-            $mail->Subject = 'PLease Reset Your Password';
+            $mail->Subject = 'Please Reset Your Password';
             $mail->Body    = "<p>Hello {$user['name']},</p>
                               <p>Click the link below to reset your password:</p>
                               <a href='$resetLink'>$resetLink</a>
