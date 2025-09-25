@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$loggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+$userName = $loggedIn ? $_SESSION['name'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,23 +15,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
-
+  
 <!-- Navbar -->
-<nav id="navbar" class="navbar navbar-expand-lg fixed-top custom-navbar">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
     <a class="navbar-brand fw-bold fs-3" href="#">Jadoo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+    
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      data-bs-toggle="collapse" 
+      data-bs-target="#navMenu" 
+      aria-controls="navMenu" 
+      aria-expanded="false" 
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
         <li class="nav-item"><a class="nav-link" href="#steps">Booking</a></li>
         <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
         <li class="nav-item"><a class="nav-link" href="#footer">Contact</a></li>
-        <li class="nav-item"><button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button></li>
-        <li class="nav-item"><button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button></li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm">🌙</button>
+        </li>
+
+        <?php if ($loggedIn): ?>
+          <li class="nav-item dropdown ms-lg-2">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?php echo htmlspecialchars($userName); ?>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+              <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+            </ul>
+          </li>
+        <?php else: ?>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a class="btn btn-outline-warning btn-sm w-100 w-lg-auto me-lg-2" href="login.php">Login</a>
+          </li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a class="btn btn-warning btn-sm w-100 w-lg-auto" href="signup.php">Sign Up</a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>
@@ -33,9 +68,9 @@
 
 <!-- Hero Section -->
 <section class="hero-section position-relative" id="home">
-  <div class="container position-relative">
+  <div class="container">
     <div class="row align-items-center">
-      <div class="col-md-6">
+      <div class="col-md-6 text-center text-md-start">
         <p class="text-uppercase text-warning small">Best Destinations Around The World</p>
         <h1 class="display-4 fw-bold">
           Travel, enjoy<br>
@@ -43,22 +78,22 @@
           <span class="text-warning">and full life</span>
         </h1>
         <p class="lead">Find your next adventure with Jadoo.</p>
-        <div class="d-flex align-items-center mt-3">
+        <div class="d-flex flex-column flex-sm-row align-items-center mt-3 gap-3">
           <a href="#services" class="btn btn-warning px-4 py-2 rounded-pill">Find out more</a>
-          <a href="#" class="play-demo-btn ms-4">
+          <a href="#" class="play-demo-btn">
             <span class="play-circle">&#9658;</span>
             Play Demo
           </a>
         </div>
       </div>
-      <div class="col-md-6 text-center">
+      <div class="col-md-6 text-center mt-4 mt-md-0">
         <img src="images/top1.png" alt="Hero Image" class="img-fluid hero-img">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services -->
+<!-- Services Section -->
 <section id="services" class="py-5 text-center">
   <div class="container">
     <p class="text-uppercase text-warning fw-semibold small mb-1">Category</p>
@@ -96,7 +131,7 @@
   </div>
 </section>
 
-<!-- Top Destinations -->
+<!-- Destinations Section -->
 <section id="destinations" class="py-5 bg-light">
   <div class="container text-center">
     <p class="text-uppercase text-warning fw-semibold small mb-1">Top Selling</p>
@@ -142,11 +177,11 @@
   </div>
 </section>
 
-<!-- Booking Steps with Trip to Greece card -->
+<!-- Booking Steps -->
 <section id="steps" class="py-5 bg-white">
   <div class="container">
     <div class="row align-items-center g-5">
-      <!-- Booking Steps -->
+      <!-- Steps -->
       <div class="col-md-6">
         <p class="text-uppercase text-warning fw-semibold small mb-1">Easy and Fast</p>
         <h2 class="mb-5 fw-bold display-6">Book Your Next Trip in 3 Easy Steps</h2>
@@ -173,7 +208,7 @@
         </div>
       </div>
 
-      <!-- Trip to Greece Card -->
+      <!-- Trip Card -->
       <div class="col-md-6">
         <div class="card border-0 shadow rounded-4 overflow-hidden">
           <img src="images/greece.jpg" class="card-img-top" alt="Trip to Greece">
@@ -195,7 +230,6 @@
     </div>
   </div>
 </section>
-
 <!-- What People Say -->
 <section id="testimonials" class="py-5 bg-light text-center">
   <div class="container">
@@ -296,46 +330,31 @@
     </div>
   </div>
 </footer>
-
-<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Login</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <input type="email" class="form-control" placeholder="Email" required>
-          <input type="password" class="form-control" placeholder="Password" required>
-          <button class="btn btn-primary w-100 mt-3">Login</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Sign Up Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sign Up</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <input type="text" class="form-control" placeholder="Full Name" required>
-          <input type="email" class="form-control" placeholder="Email" required>
-          <input type="password" class="form-control" placeholder="Password" required>
-          <button class="btn btn-success w-100 mt-3">Sign Up</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const toggleBtn = document.getElementById('themeToggle');
+  const body = document.body;
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️';
+  } else {
+    body.classList.remove('dark-mode');
+    toggleBtn.textContent = '🌙';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      toggleBtn.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      toggleBtn.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
 </body>
 </html>
